@@ -1,0 +1,6 @@
+[submodule "upes"]
+	path = upes/upes
+	url = https://github.com/khose-ie/upes.git
+[submodule "upes-threadx"]
+	path = upes/upes-threadx
+	url = https://github.com/khose-ie/upes-threadx.git
