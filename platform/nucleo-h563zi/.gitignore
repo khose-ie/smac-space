@@ -1,8 +1,13 @@
-Drivers
-Middlewares
-Utilities
+AZURE_RTOS/
+Drivers/
+Middlewares/
+Utilities/
+cmake/
+Core/
+FileX/
 
 .mxproject
 startup_stm32h563xx.s
 STM32H563xx_FLASH.ld
 STM32H563xx_RAM.ld
+
