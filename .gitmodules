@@ -1,6 +1,6 @@
-[submodule "sam"]
-	path = sam/sam
-	url = https://github.com/khose-ie/sam.git
+[submodule "smac"]
+	path = smac/smac
+	url = https://github.com/khose-ie/smac.git
 [submodule "sam-threadx"]
 	path = sam/sam-threadx
 	url = https://github.com/khose-ie/sam-threadx.git
