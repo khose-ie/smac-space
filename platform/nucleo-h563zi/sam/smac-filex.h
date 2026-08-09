@@ -1,16 +1,16 @@
-/// @file sam-filex.h
-/// @brief SAM Configuration Header Example for File System Abstraction Layer
-/// @details This is an example configuration header file for the SAM file system abstraction
+/// @file smac-filex.h
+/// @brief SMAC Configuration Header Example for File System Abstraction Layer
+/// @details This is an example configuration header file for the SMAC file system abstraction
 /// layer.
 ///          It defines constants and macros that can be modified to customize the behavior
 ///          of the file system abstraction layer according to the specific requirements of the
 ///          target application and underlying operating system.
-/// @note This file should be copied and renamed to sam-filex.h and modified as needed.
+/// @note This file should be copied and renamed to smac-filex.h and modified as needed.
 /// @author Khose-ie<khose-ie@outlook.com>
 /// @date 2026-05-14
 
-#ifndef _SAM_FILEX_H_
-#define _SAM_FILEX_H_
+#ifndef _SMAC_FILEX_H_
+#define _SMAC_FILEX_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,32 +26,32 @@ extern "C" {
 /// @brief Number of file system media instances
 /// @details This constant defines the number of file system media instances supported.
 ///     Modify this value according to your application's needs.
-#define SAM_FX_MEDIA_COUNT (1)
+#define SMAC_FX_MEDIA_COUNT (1)
 
 /// @brief Size of each media work stack block
 /// @details This constant defines the size (in bytes) of each media work stack block.
 ///     Modify this value according to your application's needs and the requirements
 ///     of the underlying file system used.
-#define SAM_FX_MEDIA_WORK_SIZE (4096)
+#define SMAC_FX_MEDIA_WORK_SIZE (4096)
 
 /// @brief Size of the FS stack memory zone
 /// @details This constant defines the size (in bytes) of the memory zone
 ///          allocated for the FS stack byte pool.
 ///          If you always use static stack allocation APIs, you can reduce this size
 ///          to save memory due to only management blocks are allocated from this pool.
-#define SAM_FX_MAX_OPEN_ENTITIES (8)
+#define SMAC_FX_MAX_OPEN_ENTITIES (8)
 
 /// @brief Use external memory for FS stack
 /// @details This macro defines an external byte array that serves as the memory pool for the FS
 /// stack byte pool.
 ///     If this macro is not defined, a static byte pool will be created. The size of this memory
 ///     must be equal to
-///     @ref SAM_FX_STACK_EX_MEM_SIZE.
+///     @ref SMAC_FX_STACK_EX_MEM_SIZE.
 ///     If don't define this macro, the FS stack will define a static variable as the memory pool,
 ///     and automatically calculate the size based on the media count and work stack size. The
 ///     external memory stack should be defined as following style:
-///         uint8_t fs_ex_stack_mem[SAM_FX_STACK_EX_MEM_SIZE]
-// #define SAM_FX_STACK_EX_MEM (fs_ex_stack_mem)
+///         uint8_t fs_ex_stack_mem[SMAC_FX_STACK_EX_MEM_SIZE]
+// #define SMAC_FX_STACK_EX_MEM (fs_ex_stack_mem)
 
 /// @brief Size of the external FS stack memory
 /// @details This constant defines the size (in bytes) of the external memory allocated for the FS
@@ -60,10 +60,12 @@ extern "C" {
 ///     The requested size of the external memory are different based on the file system you used.
 ///     Please calculate the required size according to your file system's requirements. If you
 ///     don't define the @ref UPES_FILEX_STACK_MEM macro, this marco will be ignored.
-// #define SAM_FX_STACK_EX_MEM_SIZE (SAM_FX_MEDIA_COUNT * (12416 + SAM_FX_MEDIA_WORK_SIZE) +  SAM_FX_MAX_OPEN_ENTITIES * 1024)
+// #define SMAC_FX_STACK_EX_MEM_SIZE                                                               
+//     (SMAC_FX_MEDIA_COUNT * (12416 + SMAC_FX_MEDIA_WORK_SIZE) +                               
+//      SMAC_FX_MAX_OPEN_ENTITIES * 1024)
 
 #ifdef __cplusplus
 }
 #endif // __cplusplus
 
-#endif // _SAM_FILEX_H_
+#endif // _SMAC_FILEX_H_
