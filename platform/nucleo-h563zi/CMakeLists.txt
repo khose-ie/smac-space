@@ -70,12 +70,12 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 )
 
 # Set sam path
-set(SAM_PATH ${CMAKE_SOURCE_DIR}/../../sam)
+set(SMAC_PATH ${CMAKE_SOURCE_DIR}/../../smac)
 
 # Add application modules
-add_subdirectory(${SAM_PATH}/sam ${CMAKE_BINARY_DIR}/sam)
-add_subdirectory(${SAM_PATH}/sam-threadx ${CMAKE_BINARY_DIR}/sam-threadx)
+add_subdirectory(${SMAC_PATH}/smac ${CMAKE_BINARY_DIR}/smac)
+add_subdirectory(${SMAC_PATH}/smac-threadx ${CMAKE_BINARY_DIR}/smac-threadx)
 
 # Link necessary libraries and include directories
 target_link_libraries(smac-threadx PRIVATE stm32cubemx)
-target_include_directories(smac-threadx PRIVATE ${CMAKE_SOURCE_DIR}/sam)
+target_include_directories(smac-threadx PRIVATE ${CMAKE_SOURCE_DIR}/smac)
