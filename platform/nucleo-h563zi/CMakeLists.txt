@@ -66,6 +66,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
     smac
+    smac-stm32
     smac-threadx
 )
 
@@ -74,8 +75,12 @@ set(SMAC_PATH ${CMAKE_SOURCE_DIR}/../../smac)
 
 # Add application modules
 add_subdirectory(${SMAC_PATH}/smac ${CMAKE_BINARY_DIR}/smac)
+add_subdirectory(${SMAC_PATH}/smac-stm32 ${CMAKE_BINARY_DIR}/smac-stm32)
 add_subdirectory(${SMAC_PATH}/smac-threadx ${CMAKE_BINARY_DIR}/smac-threadx)
 
 # Link necessary libraries and include directories
+target_link_libraries(smac-stm32 PRIVATE stm32cubemx)
 target_link_libraries(smac-threadx PRIVATE stm32cubemx)
+
+target_include_directories(smac-stm32 PRIVATE ${CMAKE_SOURCE_DIR}/smac)
 target_include_directories(smac-threadx PRIVATE ${CMAKE_SOURCE_DIR}/smac)
