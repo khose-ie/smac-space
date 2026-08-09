@@ -4,3 +4,6 @@
 [submodule "smac-threadx"]
 	path = smac/smac-threadx
 	url = https://github.com/khose-ie/smac-threadx.git
+[submodule "smac-stm32"]
+	path = smac/smac-stm32
+	url = https://github.com/khose-ie/smac-stm32.git
